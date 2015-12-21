@@ -24,7 +24,7 @@ Mac:
 python htpubsummarizer.py /path/to/hathitrust/metadata/file/filename.txt.gz
 ```
 
-After running for a few minutes it should spit out a file named "summary.csv" in that same directory.
+After running for a few minutes it should spit out a file named "summary.csv" in whatever directory you ran the script from.
 
 
 ##Notes
