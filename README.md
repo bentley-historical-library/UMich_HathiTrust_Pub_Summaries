@@ -62,6 +62,7 @@ _text in brackets is optional. "n" stands for any number; "y" for a number repre
 * ```yyyy[/yy]```
 
 
+####Enumeration formats not accounted for
 The following is the only format appearing over 100 times that was not included:
 
 * ```v.nn no.nn``` -- _could not be cleanly summarized_
