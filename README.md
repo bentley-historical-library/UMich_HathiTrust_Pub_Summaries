@@ -2,7 +2,7 @@ This script takes a compressed hathitrust metadata file (as downloaded from [her
 University of Michigan publications found in the file, grouped by publication series.
 
 ##Setup
-The script requires __python 2.7__ and one third-part python module, __naturalsort__, which you'll need to install this for the program to run. 
+The script requires __python 2.7__ and one third-part python module, __naturalsort__, which you'll need to install for the program to run. 
 Running the following from a command-line prompt should do the trick:
 
 ```
