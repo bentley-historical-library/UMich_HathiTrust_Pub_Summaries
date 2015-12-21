@@ -1,4 +1,3 @@
-##Intro
 This script takes a compressed hathitrust metadata file (as downloaded from [here](https://www.hathitrust.org/hathifiles)) and spits out a summary of all
 University of Michigan publications found in the file, grouped by publication series.
 
