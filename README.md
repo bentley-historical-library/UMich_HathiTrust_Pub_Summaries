@@ -3,8 +3,8 @@ This script takes a compressed hathitrust metadata file (as downloaded from [her
 University of Michigan publications found in the file, grouped by publication series.
 
 ##Setup
-The script requires python 2.7 and one third-part python module, __naturalsort__, which you'll need to install this for the program to run. 
-Running the following from a command-line prompt should add the module to your environment:
+The script requires __python 2.7__ and one third-part python module, __naturalsort__, which you'll need to install this for the program to run. 
+Running the following from a command-line prompt should do the trick:
 
 ```
 pip install naturalsort
@@ -25,7 +25,7 @@ Mac:
 python htpubsummarizer.py /path/to/hathitrust/metadata/file/filename.txt.gz
 ```
 
-After running for a few minutes it should then spit out a file named "summary.csv" in that same directory.
+After running for a few minutes it should spit out a file named "summary.csv" in that same directory.
 
 
 ##Notes
@@ -65,6 +65,6 @@ _text in brackets is optional. "n" stands for any number; "y" for a number repre
 
 The following is the only format appearing over 100 times that was not included:
 
-* ```v.nn no.nn``` -- could not be cleanly summarized
+* ```v.nn no.nn``` -- _could not be cleanly summarized_
 
 A full list of possible formats can be found [here](https://goo.gl/CRJYKJ).
