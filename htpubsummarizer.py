@@ -166,10 +166,10 @@ class HTPubSummarizer:
 
         # since we're only summarizing, we'll just grab info for the first pub in each series
         for volume, pub in pubs_dict.items():
-            d[u"title"] = unicode(pub[0].get("title", "[no title]"))
-            d[u"source"] = unicode(pub[0].get("ht identifier", "[none].none").split(".")[0])
-            d[u"source institution identifier"] = unicode(pub[0].get("source institution record number", "[none]"))
-            d[u"imprint"] = unicode(pub[0].get("imprint", "[none]"))
+            d[u"title"] = pub[0].get("title", "[no title]")
+            d[u"source"] = pub[0].get("ht identifier", "[none].none").split(".")[0]
+            d[u"source institution identifier"] = pub[0].get("source institution record number", "[none]")
+            d[u"imprint"] = pub[0].get("imprint", "[none]")
             break
 
         return d
@@ -223,7 +223,7 @@ class HTPubSummarizer:
 
     def _load_data_from_ht_gzip_dump(self, path_to_gz_file):
         with gzip.open(path_to_gz_file, mode='rb') as f:
-            reader = csv.DictReader(f, delimiter="\t", fieldnames=self.all_hathitrust_headers, quoting=csv.QUOTE_NONE)
+            reader = UnicodeDictReader(f, delimiter="\t", fieldnames=self.all_hathitrust_headers, quoting=csv.QUOTE_NONE)
             return self._facet_by_umich_publisher(reader)
 
 
@@ -332,6 +332,12 @@ class UnicodeWriter:
     def writerows(self, rows):
         for row in rows:
             self.writerow(row)
+
+
+def UnicodeDictReader(utf8_data, **kwargs):
+    csv_reader = csv.DictReader(utf8_data, **kwargs)
+    for row in csv_reader:
+        yield {key: unicode(value, 'utf-8') for key, value in row.iteritems()}
 
 
 if __name__ == "__main__":
