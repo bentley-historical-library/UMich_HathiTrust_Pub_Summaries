@@ -3,19 +3,20 @@ University of Michigan publications found in the file, grouped by publication se
 
 ##Setup
 The script requires __python 2.7__ and one third-part python module, __naturalsort__, which you'll need to install for the program to run. 
-Running the following from a command-line prompt should do the trick:
+Running the following from a command-line prompt should get it up and running:
 
 ```
 pip install naturalsort
 ```
 
 ##Using the script
-To use, open a commmand-line prompt, navigate to the script's directory, and run the following
+To use, open a commmand-line prompt, navigate to the script's directory, and run it, pointing it to an original HathiTrust
+metadata dump ```txt.gz file```. The command should look like this:
 
 Windows:
 
 ```
-python .\htpubsummarizer.py C:\path\to\hathitrust\metadata\file\filename.txt.gz
+python htpubsummarizer.py C:\path\to\hathitrust\metadata\file\filename.txt.gz
 ```
 
 Mac:
@@ -31,7 +32,7 @@ After running for a few minutes it should spit out a file named "summary.csv" in
 
 ###Importing into Excel or Google Sheets
 You'd think this would work fine but it turns out both programs are too smart for their own good: some of the enumerations will likely be 
-transformed into dates (for example, they will automatically transform the string ```1-5``` into ```1/5/2015```, and some identifiers will also lose their leading zeroes. 
+transformed into dates (for example, they will both automatically transform the string ```1-5``` into ```1/5/2015```, and some identifiers will also lose their leading zeroes. 
 The only way I've found around this is to do the following:
 
 1. Open up excel
@@ -63,7 +64,7 @@ _text in brackets is optional. "n" stands for any number; "y" for a number repre
 
 
 ####Enumeration formats not accounted for
-The following is the only format appearing over 100 times that was not included:
+The following is the only format appearing over 100 times in the full dataset that was not included:
 
 * ```v.nn no.nn``` -- _could not be cleanly summarized_
 
