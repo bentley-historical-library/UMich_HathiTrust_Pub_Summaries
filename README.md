@@ -10,8 +10,8 @@ pip install naturalsort
 ```
 
 ##Using the script
-To use, open a commmand-line prompt, navigate to the script's directory, and run it, pointing it to an original HathiTrust
-metadata dump ```txt.gz file```. The command should look like this:
+To use, open a commmand-line prompt, navigate to the script's directory, and run it with the path to an original HathiTrust
+metadata dump ```txt.gz``` file. The command should look something like this:
 
 Windows:
 
